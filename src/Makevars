@@ -9,6 +9,6 @@ PKG_CPPFLAGS=-I. \
              -DSQLITE_SOUNDEX \
              -DRCPP_DEFAULT_INCLUDE_CALL=false
 
-PKG_LIBS = vendor/sqlite3/extension-functions.o vendor/sqlite3/spellfix.o vendor/sqlite3/sqlite3.o
+PKG_LIBS = vendor/sqlite3/extension-functions.o vendor/sqlite3/sqlite3.o
 
 $(SHLIB): $(PKG_LIBS)
