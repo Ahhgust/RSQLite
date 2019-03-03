@@ -4884,7 +4884,7 @@ int RegisterExtensionFunctions(sqlite3 *db){
 #endif
   }
 
-  assert(SQLITE_OK == spellfix1Register(db)); 
+  /*  assert(SQLITE_OK == spellfix1Register(db));  */
   
   return 0;
 }
@@ -4894,6 +4894,9 @@ int sqlite3_extension_init(
     sqlite3 *db, char **pzErrMsg, const sqlite3_api_routines *pApi){
   SQLITE_EXTENSION_INIT2(pApi);
   RegisterExtensionFunctions(db);
+  
+  sqlite3_spellfix_init(db, pzErrMsg, pApi);
+  
   return 0;
 }
 #endif /* COMPILE_SQLITE_EXTENSIONS_AS_LOADABLE_MODULE */
