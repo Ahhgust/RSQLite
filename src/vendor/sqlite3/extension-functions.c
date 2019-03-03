@@ -2890,6 +2890,7 @@ static void editDist3SqlFunc(
 static int editDist3Install(sqlite3 *db){
   int rc;
   EditDist3Config *pConfig = sqlite3_malloc64( sizeof(*pConfig) );
+  foo
   if( pConfig==0 ) return SQLITE_NOMEM;
   memset(pConfig, 0, sizeof(*pConfig));
   rc = sqlite3_create_function_v2(db, "editdist3",
@@ -4883,8 +4884,7 @@ int RegisterExtensionFunctions(sqlite3 *db){
 #endif
   }
 
-  foo
-  assert(SQLITE_OK == spellfix1Register(db));
+  assert(SQLITE_OK == spellfix1Register(db)); 
   
   return 0;
 }
