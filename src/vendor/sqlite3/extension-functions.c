@@ -4883,6 +4883,7 @@ int RegisterExtensionFunctions(sqlite3 *db){
 #endif
   }
 
+  foo
   assert(SQLITE_OK == spellfix1Register(db));
   
   return 0;
