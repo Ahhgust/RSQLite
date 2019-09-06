@@ -4894,7 +4894,10 @@ int sqlite3_extension_init(
     sqlite3 *db, char **pzErrMsg, const sqlite3_api_routines *pApi){
   SQLITE_EXTENSION_INIT2(pApi);
   RegisterExtensionFunctions(db);
-  
+  /* added by Ahhgust:
+     registerint spellfix within 
+  RegisterExtensionFunctions(db)
+  did not appear to work. This, however, does */
   sqlite3_spellfix_init(db, pzErrMsg, pApi);
   
   return 0;
